@@ -43,6 +43,7 @@ return [
     */
 
     'debug' => (bool) env('APP_DEBUG', false),
+    'public_path' => ((bool) env('APP_DEBUG', false)?'/':'public/'),
 
     /*
     |--------------------------------------------------------------------------
