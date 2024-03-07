@@ -106,7 +106,7 @@
 @section('js')
     <script>
         const host = '@php echo $_SERVER['APP_URL'] @endphp';
-        const path = '@php echo ($_GET['p'] != '')?$_GET['p']:"/" @endphp';
+        const path = '@php echo (isset($_GET['p']) && $_GET['p'] != '')?$_GET['p']:"/" @endphp';
         const breadcrumbs = path.split('/');
         $(document).ready(() => {
             $('#imageUploadPath').val(path);
