@@ -64,7 +64,7 @@ return [
     */
 
     'logo' => '<b>FTP</b> Territorios',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo_img' => ((bool)env('APP_DEBUG') ? '/' : 'public/') . 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -86,7 +86,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => ((bool)env('APP_DEBUG') ? '/' : 'public/') . 'vendor/adminlte/dist/img/AdminLTELogo.png',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -109,7 +109,7 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => ((bool)env('APP_DEBUG') ? '/' : 'public/') . 'vendor/adminlte/dist/img/AdminLTELogo.png',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
             'width' => 60,
@@ -495,17 +495,17 @@ return [
                 [
                     'type' => 'css',
                     'asset' => true,
-                    'location' => 'vendor/jsgrid/jsgrid.min.css',
+                    'location' => ((bool)env('APP_DEBUG') ? '/' : 'public/') . 'vendor/jsgrid/jsgrid.min.css',
                 ],
                 [
                     'type' => 'css',
                     'asset' => true,
-                    'location' => 'vendor/jsgrid/jsgrid-theme.min.css'
+                    'location' => ((bool)env('APP_DEBUG') ? '/' : 'public/') . 'vendor/jsgrid/jsgrid-theme.min.css'
                 ],
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => 'vendor/jsgrid/jsgrid.min.js'
+                    'location' => ((bool)env('APP_DEBUG') ? '/' : 'public/') . 'vendor/jsgrid/jsgrid.min.js'
                 ]
             ]
         ],
@@ -515,18 +515,18 @@ return [
                 [
                     'type' => 'css',
                     'asset' => true,
-                    'location' => 'vendor/toastr/toastr.min.css',
+                    'location' => ((bool)env('APP_DEBUG') ? '/' : 'public/') . 'vendor/toastr/toastr.min.css',
                 ],
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => 'vendor/toastr/toastr.min.js',
+                    'location' => ((bool)env('APP_DEBUG') ? '/' : 'public/') . 'vendor/toastr/toastr.min.js',
                 ]
             ]
         ],
-        'Dropzone'=>[
-            'active'=>true,
-            'files'=>[
+        'Dropzone' => [
+            'active' => true,
+            'files' => [
                 [
                     'type' => 'css',
                     'asset' => true,

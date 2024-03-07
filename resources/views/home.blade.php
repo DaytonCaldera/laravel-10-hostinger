@@ -53,9 +53,6 @@
         </div>
 
     </div>
-    {{-- <pre>
-    {{ print_r($_SERVER) }}
-</pre> --}}
 @stop
 
 @section('content')
@@ -178,7 +175,7 @@
                                         window.location.href = '/?p=' + path + '/' + item.nombre
                                             .replace('/', '') + '';
                                     } else {
-                                        const temp_path = host + path + '/' + item.nombre;
+                                        const temp_path = host + (path == '/' ? path : path + '/') + item.nombre;
                                         window.location.href = temp_path;
                                     }
 
