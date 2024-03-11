@@ -46,8 +46,8 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            // 'host' => env('DB_HOST', 'mysql-db'),
-            'host' => 'mysql-db', //
+            'host' => env('DB_HOST', 'mysql-db'),
+            // 'host' => 'mysql-db', //enable this in case of using docker container
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
