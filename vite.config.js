@@ -9,6 +9,12 @@ export default defineConfig({
                 'resources/js/app.js',
             ],
             refresh: true,
+            transformOnServe: (code, devServerUrl) => code.replaceAll('/build/assets', devServerUrl+'/public/build/assets'),
         }),
     ],
+    build: {
+        // Add the following lines for public path preserving
+        outDir: '../public/build/assets', // Place compiled assets in this directory
+        publicDir: '../public/build/assets', // Tell Vite to use this directory for references
+    },
 });

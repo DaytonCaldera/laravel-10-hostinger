@@ -21,4 +21,4 @@ Route::post('/agregar-carpeta', [App\Http\Controllers\FMSController::class, 'add
 Route::get('/data',[App\Http\Controllers\FMSController::class,'listFiles'])->name('api.get.data');
 Route::patch('/editar',[App\Http\Controllers\FMSController::class,'renameFile'])->name('api.patch.data');
 Route::delete('/eliminar',[App\Http\Controllers\FMSController::class,'deleteFile'])->name('api.delete.data');
-Route::get('/{fileName}', [App\Http\Controllers\FMSController::class, 'show'])->where('fileName', '^(?!(favicon\.ico|robots\.txt)).*$');
+Route::get('/{fileName}', [App\Http\Controllers\FMSController::class, 'show'])->where('fileName', '^(?!.*\.(css|js)$).*\.(png|jpg|gif|jpeg|bmp|ico|svg)$');

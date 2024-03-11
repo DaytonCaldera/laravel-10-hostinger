@@ -1,0 +1,47 @@
+version: "3.9"
+services:
+  webapp:
+    image: ubuntu:latest
+    build:
+      context: .
+    ports:
+      - 8181:80
+    volumes:
+      - .:/var/www/html:Z
+      - vendor:/var/www/html/vendor
+      - storage:/var/www/html/storage
+    networks:
+      fms-network:
+        ipv4_address: 172.20.0.10
+    environment:
+      DB_HOST: mysql
+    depends_on:
+      - mysql-db
+  mysql-db:
+    image: mysql:8.0 # Use MySQL 8.0 image
+    environment:
+      MYSQL_ROOT_PASSWORD: password # Set root password
+      MYSQL_DATABASE: api # Create the database
+    ports:
+      - "3306:3306" # Map port 3306 to host
+    volumes:
+      - mysql-data:/var/lib/mysql # Persist database data
+    expose:
+      # Opens port 3306 on the container
+      - '3306'
+    networks:
+      fms-network:
+        ipv4_address: 172.20.0.11
+
+volumes:
+  vendor:
+  storage:
+  mysql-data:
+
+
+networks:
+  fms-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
