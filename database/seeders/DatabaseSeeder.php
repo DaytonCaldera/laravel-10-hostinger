@@ -12,17 +12,23 @@ class DatabaseSeeder extends Seeder {
     public function run(): void {
         // \App\Models\User::factory(10)->create();
 
-        \App\Models\User::factory()->create([
-            'name' => 'Dayton Caldera',
-            'username' => 'dayton.admin',
-            'email' => 'dayton@corolabrador.com',
-            'password' => 'dayton.admin123',
-        ]);
+        // \App\Models\User::factory()->create([
+        //     'name' => 'Dayton Caldera',
+        //     'username' => 'dayton.admin',
+        //     'email' => 'dayton@corolabrador.com',
+        //     'password' => 'dayton.admin123',
+        // ]);
+        // \App\Models\User::factory()->create([
+        //     'name' => 'Territorios',
+        //     'username' => 'territorios.guest',
+        //     'email' => 'territorios@corolabrador.com',
+        //     'password' => 'UrOz5nYZ26#',
+        // ]);
         \App\Models\User::factory()->create([
             'name' => 'Territorios',
-            'username' => 'territorios.guest',
-            'email' => 'territorios@corolabrador.com',
-            'password' => 'UrOz5nYZ26#',
+            'username' => 'territorios.admin',
+            'email' => 'territorios.admin@corolabrador.com',
+            'password' => '@territorios.1914',
         ]);
     }
 }
